@@ -5,13 +5,23 @@
 //  Created by Anubhav Rawat on 1/30/25.
 //
 
+
+/*
+ todos
+ 
+ */
+
 import SwiftUI
+import SwiftData
 
 @main
 struct SwipeJobApplicationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListingPage()
+                .preferredColorScheme(.dark)
         }
+        .modelContainer(for: [ToBeAddedProduct.self, SavedProduct.self])
+        
     }
 }
