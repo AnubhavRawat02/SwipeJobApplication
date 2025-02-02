@@ -49,7 +49,7 @@ struct ListingPage: View {
                     if !viewModel.feedbackMessage.isEmpty{
                         Text("\(viewModel.feedbackMessage)")
                             .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 5){
                                     self.viewModel.feedbackMessage = ""
                                 }
                             }
@@ -88,8 +88,6 @@ struct ListingPage: View {
             viewModel.fetchSavedProducts(modelContext: modelContext)
             
             Task{
-                await viewModel.getProducts(modelContext: modelContext)
-                
 //                execute reqeusts which were not completed.
                 let descriptor = FetchDescriptor<ToBeAddedProduct>()
                 if let toBeAddedProducts = try? modelContext.fetch(descriptor){
@@ -100,6 +98,9 @@ struct ListingPage: View {
                     }
                     
                 }
+                
+                
+                await viewModel.getProducts(modelContext: modelContext)
                 
             }
             

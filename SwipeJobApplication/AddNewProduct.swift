@@ -19,7 +19,7 @@ struct AddNewProduct: View {
             if !viewModel.addProductsFeedback.isEmpty{
                 Text(viewModel.addProductsFeedback)
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
                             self.viewModel.addProductsFeedback = ""
                         }
                     }
@@ -28,7 +28,7 @@ struct AddNewProduct: View {
             if !viewModel.addProductValidationError.isEmpty{
                 Text("Validation Error: \(viewModel.addProductValidationError)")
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
                             self.viewModel.addProductValidationError = ""
                         }
                     }
