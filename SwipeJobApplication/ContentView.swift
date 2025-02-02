@@ -81,29 +81,6 @@ struct ListingPage: View {
 
                 }
                 
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        Task{
-//                            viewModel.allProducts = []
-//                            viewModel.fetchSavedProducts(modelContext: modelContext)
-                            await viewModel.getProducts(modelContext: modelContext)
-                        }
-                        
-                    } label: {
-                        Text("get new products")
-                    }
-
-                    
-                }
-                ToolbarItem(placement: .navigationBarLeading){
-                    Button {
-                        viewModel.printInfo(modelContext: modelContext)
-                    } label: {
-                        Text("print")
-                    }
-
-                }
-                
             }
         }
         .onAppear {

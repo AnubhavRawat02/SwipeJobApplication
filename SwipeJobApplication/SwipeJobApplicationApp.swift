@@ -6,11 +6,6 @@
 //
 
 
-/*
- todos
- 
- */
-
 import SwiftUI
 import SwiftData
 
